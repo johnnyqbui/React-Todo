@@ -1,1 +1,1 @@
-React Boilerplate 3
+React Boilerplate
