@@ -4,6 +4,7 @@ import AddTodo from 'AddTodo';
 import TodoSearch from 'TodoSearch';
 import TodoApi from 'TodoApi';
 import uuid from 'uuid';
+import moment from 'moment';
 
 class TodoApp extends Component{
 	constructor(props) {
@@ -27,7 +28,9 @@ class TodoApp extends Component{
 				// Universal Id, timestamped unique id
 				id: uuid(),
 				text: text,
-				completed: false
+				completed: false,
+				createdAt: moment().unix(),
+				completedAt: undefined
 			}]
 		})
 	}
@@ -36,6 +39,7 @@ class TodoApp extends Component{
 		const updatedTodos = this.state.todos.map((todo) => {
 			if (todo.id === id) {
 				todo.completed = !todo.completed;
+				todo.completedAt = todo.completed ? moment().unix() : undefined;
 			}
 
 			return todo;
@@ -54,7 +58,7 @@ class TodoApp extends Component{
 	}
 
 	render() {
-		const { todos, showCompleted, searchText } = this.state;
+		const { todos, showCompleted, searchText, createdAt } = this.state;
 		const filteredTodos = TodoApi.filterTodos(todos, showCompleted, searchText);
 		return (
 			<div>
