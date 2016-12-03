@@ -8,7 +8,7 @@ class TodoList extends Component{
 			return todos.map((todo) => {
 				return (
 					// Spread operator
-					<Todo key={todo.id} {...todo}/>
+					<Todo key={todo.id} {...todo} onToggle={this.props.onToggle}/>
 				)
 			})
 		};
