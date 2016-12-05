@@ -17,7 +17,6 @@ class TodoList extends Component{
 				)
 			})
 		};
-
 		return (
 			<div>
 				{renderTodos()}
