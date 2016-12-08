@@ -5,11 +5,17 @@ import TodoApp from 'components/TodoApp';
 import * as actions from 'actions/actions';
 import { Provider } from 'react-redux';
 import { configure } from 'store/configureStore';
+import * as TodoApi from 'api/TodoApi';
 const store = configure();
 
 store.subscribe(() => {
-	console.log('New State', store.getState());
+	const state = store.getState();
+	console.log('New State', state);
+	TodoApi.setTodos(state.todos);
 })
+
+const initialTodos = TodoApi.getTodos();
+store.dispatch(actions.addTodos(initialTodos))
 
 // Load Foundation
 $(document).foundation();
