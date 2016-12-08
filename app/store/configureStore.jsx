@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import {searchTextReducer, showCompletedReducer, todosReducer } from 'reducers';
+import {searchTextReducer, showCompletedReducer, todosReducer } from 'reducers/reducers';
 
 export default combineReducers({
 	searchText: searchTextReducer,

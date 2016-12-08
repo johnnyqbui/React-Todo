@@ -115,11 +115,13 @@
 
 	var _actions = __webpack_require__(391);
 
-	var _actions2 = _interopRequireDefault(_actions);
+	var actions = _interopRequireWildcard(_actions);
 
 	var _configureStore = __webpack_require__(392);
 
 	var _configureStore2 = _interopRequireDefault(_configureStore);
+
+	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -131,9 +133,9 @@
 		console.log('New State', store.getState());
 	});
 
-	store.dispatch(_actions2.default.addTodo('Complete react app'));
-	store.dispatch(_actions2.default.setSearchText('react'));
-	store.dispatch(_actions2.default.toggleShowCompleted());
+	store.dispatch(actions.addTodo('Complete react app'));
+	store.dispatch(actions.setSearchText('react'));
+	store.dispatch(actions.toggleShowCompleted());
 
 	// Load Foundation
 	$(document).foundation();
