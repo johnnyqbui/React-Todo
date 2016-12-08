@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import uuid from 'uuid';
+import moment from 'moment';
+
 import TodoList from 'components/TodoList';
 import AddTodo from 'components/AddTodo';
 import TodoSearch from 'components/TodoSearch';
 import TodoApi from 'api/TodoApi';
-import uuid from 'uuid';
-import moment from 'moment';
+
 
 class TodoApp extends Component{
 	constructor(props) {
@@ -35,21 +37,6 @@ class TodoApp extends Component{
 		})
 	}
 
-	handleToggle(id) {
-		const updatedTodos = this.state.todos.map((todo) => {
-			if (todo.id === id) {
-				todo.completed = !todo.completed;
-				todo.completedAt = todo.completed ? moment().unix() : undefined;
-			}
-
-			return todo;
-		})
-
-		this.setState({
-			todos: updatedTodos
-		});
-	}
-
 	handleSearch(showCompleted, searchText) {
 		this.setState({
 			showCompleted: showCompleted,
@@ -67,7 +54,7 @@ class TodoApp extends Component{
 					<div className="column small-centered small-11 medium-6 large-5">
 						<div className="container">
 							<TodoSearch onSearch={this.handleSearch.bind(this)}/>
-							<TodoList todos={filteredTodos} onToggle={this.handleToggle.bind(this)}/>
+							<TodoList/>
 							<AddTodo onAddTodo={this.handleAddTodo.bind(this)}/>
 						</div>
 					</div>
@@ -79,4 +66,4 @@ class TodoApp extends Component{
 	}
 }
 
-module.exports = TodoApp;
+export default TodoApp;

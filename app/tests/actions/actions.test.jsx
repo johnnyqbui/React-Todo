@@ -1,6 +1,5 @@
 import expect from 'expect';
-const actions = require('actions')
-
+import * as actions from 'actions/actions';
 describe('Actions', () => {
 	it('should generate search text action', () => {
 		const action = {

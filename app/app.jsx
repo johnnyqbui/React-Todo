@@ -1,14 +1,11 @@
 import React from 'react';
-import redux, { createStore, compose } from 'redux';
 import ReactDOM from 'react-dom';
 import {Route, Router, IndexRoute, hashHistory} from 'react-router';
 import TodoApp from 'components/TodoApp';
 import * as actions from 'actions/actions';
-import reducer from 'store/configureStore'
-
-let store = createStore(reducer, compose(
-	window.devToolsExtension ? window.devToolsExtension() : f => f
-))
+import { Provider } from 'react-redux';
+import { configure } from 'store/configureStore';
+const store = configure();
 
 store.subscribe(() => {
 	console.log('New State', store.getState());
@@ -25,7 +22,9 @@ $(document).foundation();
 require('style!css!sass!applicationStyles');
 
 ReactDOM.render(
-	<TodoApp />,
+	<Provider store = { store }>
+		<TodoApp/>
+	</Provider>,
 	document.getElementById("app")
 )
 

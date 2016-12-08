@@ -26,4 +26,4 @@ class TodoSearch extends Component {
 	}
 }
 
-module.exports = TodoSearch;
+export default TodoSearch;

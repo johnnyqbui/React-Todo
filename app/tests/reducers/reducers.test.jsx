@@ -1,7 +1,7 @@
 import expect from 'expect';
-const reducers = require('reducers');
-// Deep freeze to ensure reducers are pure functions
+import * as reducers from 'reducers/reducers'
 
+// Deep freeze to ensure reducers are pure functions
 import df from 'deep-freeze-strict';
 
 describe('Reducers', () => {
