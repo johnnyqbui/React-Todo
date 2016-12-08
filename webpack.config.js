@@ -35,13 +35,11 @@ module.exports = {
 		root: __dirname,
 		modulesDirectories: [
 			'node_modules',
-			'./app/components',
-			'./app/api'
+			'./app',
 		],
 		alias: {
 			applicationStyles: 'app/styles/app.scss',
-			actions: 'app/actions/actions.jsx',
-			reducers: 'app/reducers/reducers.jsx'
+			reducers: 'app/reducers/reducers.jsx',
 		},
 		extensions: ['', '.js', '.jsx']
 	},
@@ -50,7 +48,7 @@ module.exports = {
 			test: /\.jsx?$/,
 			loader: 'babel-loader',
 			query: {
-				presets: ['react', 'es2015']
+				presets: ['react', 'es2015', 'stage-0']
 			},
 			exclude: /(node_modules|bower_components)/
 		}]

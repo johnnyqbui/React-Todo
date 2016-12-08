@@ -39,13 +39,13 @@ describe('Reducers', () => {
 		})
 
 		it('should toggle todo', () => {
-			const todos = {
+			const todos = [{
 				id: 1,
 				text: 'something',
 				completed: true,
 				createdAt: 1,
 				completedAt: 2
-			}
+			}]
 
 			const action = {
 				type: 'TOGGLE_TODO',
@@ -53,8 +53,8 @@ describe('Reducers', () => {
 			}
 
 			const res = reducers.todosReducer(df(todos), df(action));
-			expect(res[0].completed).toBe(false);
-			expect(res[0].completedAt).toBe('undefined');
+			expect(res[0].completed).toEqual(false);
+			expect(res[0].completedAt).toEqual(undefined);
 		})
 	})
 })

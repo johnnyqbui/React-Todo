@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import TodoList from 'TodoList';
-import AddTodo from 'AddTodo';
-import TodoSearch from 'TodoSearch';
-import TodoApi from 'TodoApi';
+import TodoList from 'components/TodoList';
+import AddTodo from 'components/AddTodo';
+import TodoSearch from 'components/TodoSearch';
+import TodoApi from 'api/TodoApi';
 import uuid from 'uuid';
 import moment from 'moment';
 
