@@ -11,10 +11,6 @@ store.subscribe(() => {
 	console.log('New State', store.getState());
 })
 
-store.dispatch(actions.addTodo('Complete react app'));
-store.dispatch(actions.setSearchText('react'));
-store.dispatch(actions.toggleShowCompleted());
-
 // Load Foundation
 $(document).foundation();
 

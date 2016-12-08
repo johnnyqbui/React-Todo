@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import uuid from 'uuid';
 import moment from 'moment';
-
 import TodoList from 'components/TodoList';
 import AddTodo from 'components/AddTodo';
 import TodoSearch from 'components/TodoSearch';
-import TodoApi from 'api/TodoApi';
-
+import * as TodoApi from 'api/TodoApi';
 
 class TodoApp extends Component{
 	constructor(props) {
